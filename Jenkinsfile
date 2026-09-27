@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/YOUR_USERNAME/Employee-Management.git'
+                    url: 'https://github.com/aakashpatel96103/DevOps-PRG.git'
 
                 echo 'Source code checked out successfully.'
             }
