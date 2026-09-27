@@ -35,7 +35,7 @@ pipeline {
 
         stage('Security Validation') {
             steps {
-                bat 'python -m pip_audit'
+                bat 'python -m pip_audit -r requirements.txt'
             }
         }
 
