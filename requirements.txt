@@ -8,3 +8,4 @@ passlib[bcrypt]
 pytest
 httpx
 pip-audit
+ecdsa>=0.19.3
