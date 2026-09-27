@@ -1,0 +1,9 @@
+services:
+  employee-management:
+    build: .
+    image: employee-management:1.0.0
+    ports:
+      - "8000:8000"
+    environment:
+      SECRET_KEY: employee-management-secret
+    restart: unless-stopped
