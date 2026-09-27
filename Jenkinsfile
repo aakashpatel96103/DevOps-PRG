@@ -41,7 +41,7 @@ pipeline {
         stage('Versioned Artifact') {
             steps {
                 bat 'if not exist artifacts mkdir artifacts'
-                bat 'tar -a -c -f artifacts\employee-management-1.0.%BUILD_NUMBER%.zip app tests requirements.txt Dockerfile'
+                bat 'tar -a -c -f artifacts/employee-management-1.0.%BUILD_NUMBER%.zip app tests requirements.txt Dockerfile'
             }
         }
 
@@ -54,8 +54,8 @@ pipeline {
 
         stage('Kubernetes Deploy') {
             steps {
-                bat 'kubectl apply -f k8s\deployment.yaml'
-                bat 'kubectl apply -f k8s\service.yaml'
+                bat 'kubectl apply -f k8s/deployment.yaml'
+                bat 'kubectl apply -f k8s/service.yaml'
                 bat 'kubectl set image deployment/employee-management employee-management=employee-management:1.0.%BUILD_NUMBER%'
                 bat 'kubectl rollout status deployment/employee-management'
             }
