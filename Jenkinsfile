@@ -22,6 +22,8 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
+                bat 'python -m pip install --upgrade pip'
+                bat 'python -m pip install --upgrade ecdsa'
                 bat 'python -m pip install -r requirements.txt'
             }
         }
